@@ -1,0 +1,85 @@
+/* ========================================
+   EXTENDED DESIGN SYSTEM TOKENS
+   Option A: New Components
+   ======================================== */
+
+/* Import base tokens from version 7 */
+@import url("../../07-design-system/design-tokens.css");
+
+/* ========== NEW TOKENS FOR COMPONENTS ========== */
+
+:root {
+  /* ===== NOTIFICATION/TOAST TOKENS ===== */
+  --notification-width: 320px;
+  --notification-padding: var(--space-md);
+  --notification-border-radius: var(--radius-md);
+  --notification-shadow: var(--shadow-lg);
+  --notification-z-index: 500;
+  --notification-animation-duration: var(--transition-normal);
+
+  /* Toast specific timings */
+  --toast-auto-hide-duration: 5000ms;
+  --toast-animation-distance: 20px;
+
+  /* Semantic colors for notifications */
+  --color-success-bg: #d4edda;
+  --color-success-border: #c3e6cb;
+  --color-success-text: #155724;
+
+  --color-error-bg: #f8d7da;
+  --color-error-border: #f5c6cb;
+  --color-error-text: #721c24;
+
+  --color-warning-bg: #fff3cd;
+  --color-warning-border: #ffeeba;
+  --color-warning-text: #856404;
+
+  --color-info-bg: #d1ecf1;
+  --color-info-border: #bee5eb;
+  --color-info-text: #0c5460;
+
+  /* ===== MODAL/DIALOG TOKENS ===== */
+  --modal-backdrop-bg: rgba(0, 0, 0, 0.5);
+  --modal-backdrop-blur: 0;
+  --modal-border-radius: var(--radius-lg);
+  --modal-shadow: var(--shadow-xl);
+  --modal-z-index: 400;
+  --modal-width-sm: 400px;
+  --modal-width-md: 600px;
+  --modal-width-lg: 800px;
+  --modal-max-width: 90vw;
+  --modal-animation-duration: var(--transition-normal);
+
+  /* Modal spacing */
+  --modal-header-padding: var(--space-lg);
+  --modal-body-padding: var(--space-lg);
+  --modal-footer-padding: var(--space-lg);
+
+  /* ===== TOOLTIP TOKENS ===== */
+  --tooltip-max-width: 200px;
+  --tooltip-padding: var(--space-sm) var(--space-md);
+  --tooltip-border-radius: var(--radius-md);
+  --tooltip-bg: var(--color-charcoal);
+  --tooltip-text: var(--color-white);
+  --tooltip-shadow: var(--shadow-md);
+  --tooltip-z-index: 500;
+  --tooltip-arrow-size: 6px;
+  --tooltip-animation-duration: var(--transition-quick);
+  --tooltip-offset: 8px;
+  --tooltip-font-size: var(--font-size-body-sm);
+}
+
+/* ========== SEMANTIC COLOR LIGHT VARIANTS ===== */
+:root {
+  --color-success-light: #d4edda;
+  --color-success-lighter: #f0f7f4;
+  --color-error-light: #f8d7da;
+  --color-error-lighter: #fef5f6;
+  --color-warning-light: #fff3cd;
+  --color-warning-lighter: #fffbf0;
+  --color-info-light: #d1ecf1;
+  --color-info-lighter: #f0f8fa;
+
+  --color-neutral-light: #f5f5f5;
+  --color-text-muted: #999999;
+}

@@ -1,0 +1,537 @@
+/* ========================================
+   COMPONENT STYLES
+   Notification, Modal, and Tooltip Components
+   ======================================== */
+
+/* ========================================
+   1. NOTIFICATION/TOAST COMPONENT
+   ======================================== */
+
+.notification {
+  position: fixed;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  width: var(--notification-width);
+  padding: var(--notification-padding);
+  background-color: var(--color-white);
+  border-radius: var(--notification-border-radius);
+  box-shadow: var(--notification-shadow);
+  z-index: var(--notification-z-index);
+  animation: slideInRight var(--notification-animation-duration) ease-out;
+}
+
+/* Position variants */
+.notification--top-right {
+  top: var(--space-lg);
+  right: var(--space-lg);
+}
+
+.notification--top-left {
+  top: var(--space-lg);
+  left: var(--space-lg);
+}
+
+.notification--bottom-right {
+  bottom: var(--space-lg);
+  right: var(--space-lg);
+}
+
+.notification--bottom-left {
+  bottom: var(--space-lg);
+  left: var(--space-lg);
+}
+
+/* Exit animation */
+.notification.closing {
+  animation: slideOutRight var(--notification-animation-duration) ease-in;
+}
+
+/* Type variants - Success */
+.notification--success {
+  border-left: 4px solid var(--color-success);
+  background-color: var(--color-success-bg);
+  color: var(--color-success-text);
+}
+
+.notification--success .notification__icon {
+  color: var(--color-success);
+}
+
+/* Type variants - Error */
+.notification--error {
+  border-left: 4px solid var(--color-error);
+  background-color: var(--color-error-bg);
+  color: var(--color-error-text);
+}
+
+.notification--error .notification__icon {
+  color: var(--color-error);
+}
+
+/* Type variants - Warning */
+.notification--warning {
+  border-left: 4px solid var(--color-warning);
+  background-color: var(--color-warning-bg);
+  color: var(--color-warning-text);
+}
+
+.notification--warning .notification__icon {
+  color: var(--color-warning);
+}
+
+/* Type variants - Info */
+.notification--info {
+  border-left: 4px solid var(--color-info);
+  background-color: var(--color-info-bg);
+  color: var(--color-info-text);
+}
+
+.notification--info .notification__icon {
+  color: var(--color-info);
+}
+
+/* Notification content */
+.notification__content {
+  flex: 1;
+}
+
+.notification__title {
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-body);
+  margin-bottom: var(--space-xs);
+}
+
+.notification__message {
+  font-size: var(--font-size-body-sm);
+  line-height: var(--line-height-normal);
+}
+
+/* Close button */
+.notification__close {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  opacity: 0.7;
+  transition: opacity var(--transition-quick);
+  padding: 0;
+  line-height: 1;
+}
+
+.notification__close:hover {
+  opacity: 1;
+}
+
+/* Icon area */
+.notification__icon {
+  flex-shrink: 0;
+  font-size: 20px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+/* Animations */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+/* ========================================
+   2. MODAL/DIALOG COMPONENT
+   ======================================== */
+
+/* Modal backdrop/overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--modal-backdrop-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--modal-z-index);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--modal-animation-duration),
+              visibility var(--modal-animation-duration);
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Modal container */
+.modal {
+  background-color: var(--color-white);
+  border-radius: var(--modal-border-radius);
+  box-shadow: var(--modal-shadow);
+  width: var(--modal-width-md);
+  max-width: var(--modal-max-width);
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  transform: scale(0.95);
+  opacity: 0;
+  transition: transform var(--modal-animation-duration),
+              opacity var(--modal-animation-duration);
+}
+
+.modal-overlay.active .modal {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Modal size variants */
+.modal--sm {
+  width: var(--modal-width-sm);
+}
+
+.modal--lg {
+  width: var(--modal-width-lg);
+}
+
+/* Modal header */
+.modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--modal-header-padding);
+  border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.modal__title {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-charcoal);
+  margin: 0;
+}
+
+.modal__close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: var(--color-gray);
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-quick);
+}
+
+.modal__close:hover {
+  background-color: var(--color-light-gray);
+  color: var(--color-charcoal);
+}
+
+/* Modal body */
+.modal__body {
+  padding: var(--modal-body-padding);
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* Modal footer */
+.modal__footer {
+  padding: var(--modal-footer-padding);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  gap: var(--space-md);
+  justify-content: flex-end;
+  flex-shrink: 0;
+  background-color: var(--color-lighter-gray);
+}
+
+/* Footer buttons */
+.modal__footer .btn {
+  margin: 0;
+}
+
+/* ========================================
+   3. TOOLTIP COMPONENT
+   ======================================== */
+
+/* Tooltip trigger wrapper */
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Tooltip text element */
+.tooltip {
+  position: absolute;
+  background-color: var(--tooltip-bg);
+  color: var(--tooltip-text);
+  padding: var(--tooltip-padding);
+  border-radius: var(--tooltip-border-radius);
+  font-size: var(--tooltip-font-size);
+  white-space: nowrap;
+  z-index: var(--tooltip-z-index);
+  box-shadow: var(--tooltip-shadow);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--tooltip-animation-duration),
+              visibility var(--tooltip-animation-duration);
+  pointer-events: none;
+  max-width: var(--tooltip-max-width);
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+/* Tooltip arrow (pseudo-element) */
+.tooltip::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+/* Tooltip active state */
+.tooltip-container:hover .tooltip,
+.tooltip.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ===== Position Variants ===== */
+
+/* Top position */
+.tooltip--top {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-var(--tooltip-offset));
+  margin-bottom: var(--tooltip-arrow-size);
+}
+
+.tooltip--top::before {
+  bottom: calc(-1 * var(--tooltip-arrow-size));
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: var(--tooltip-arrow-size) var(--tooltip-arrow-size) 0 var(--tooltip-arrow-size);
+  border-color: var(--tooltip-bg) transparent transparent transparent;
+}
+
+.tooltip-container:hover .tooltip--top {
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Bottom position */
+.tooltip--bottom {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(var(--tooltip-offset));
+  margin-top: var(--tooltip-arrow-size);
+}
+
+.tooltip--bottom::before {
+  top: calc(-1 * var(--tooltip-arrow-size));
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 0 var(--tooltip-arrow-size) var(--tooltip-arrow-size) var(--tooltip-arrow-size);
+  border-color: transparent transparent var(--tooltip-bg) transparent;
+}
+
+.tooltip-container:hover .tooltip--bottom {
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Left position */
+.tooltip--left {
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-var(--tooltip-offset));
+  margin-right: var(--tooltip-arrow-size);
+}
+
+.tooltip--left::before {
+  right: calc(-1 * var(--tooltip-arrow-size));
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: var(--tooltip-arrow-size) 0 var(--tooltip-arrow-size) var(--tooltip-arrow-size);
+  border-color: transparent transparent transparent var(--tooltip-bg);
+}
+
+.tooltip-container:hover .tooltip--left {
+  transform: translateY(-50%) translateX(0);
+}
+
+/* Right position */
+.tooltip--right {
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%) translateX(var(--tooltip-offset));
+  margin-left: var(--tooltip-arrow-size);
+}
+
+.tooltip--right::before {
+  left: calc(-1 * var(--tooltip-arrow-size));
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: var(--tooltip-arrow-size) var(--tooltip-arrow-size) var(--tooltip-arrow-size) 0;
+  border-color: transparent var(--tooltip-bg) transparent transparent;
+}
+
+.tooltip-container:hover .tooltip--right {
+  transform: translateY(-50%) translateX(0);
+}
+
+/* ===== Color Variants for Tooltips ===== */
+
+.tooltip--light {
+  background-color: var(--color-white);
+  color: var(--color-charcoal);
+  border: 1px solid var(--color-border);
+}
+
+.tooltip--light::before {
+  border-color: var(--color-white) transparent transparent transparent;
+}
+
+.tooltip--light.tooltip--bottom::before {
+  border-color: transparent transparent var(--color-white) transparent;
+}
+
+.tooltip--light.tooltip--left::before {
+  border-color: transparent transparent transparent var(--color-white);
+}
+
+.tooltip--light.tooltip--right::before {
+  border-color: transparent var(--color-white) transparent transparent;
+}
+
+.tooltip--success {
+  background-color: var(--color-success);
+  color: var(--color-white);
+}
+
+.tooltip--error {
+  background-color: var(--color-error);
+  color: var(--color-white);
+}
+
+.tooltip--warning {
+  background-color: var(--color-warning);
+  color: var(--color-charcoal);
+}
+
+.tooltip--info {
+  background-color: var(--color-info);
+  color: var(--color-white);
+}
+
+/* ========================================
+   HELPER UTILITIES
+   ======================================== */
+
+/* Container for demo purposes */
+.component-showcase {
+  padding: var(--space-lg);
+  background-color: var(--color-lighter-gray);
+  border-radius: var(--radius-md);
+  margin: var(--space-lg) 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+  min-height: 200px;
+}
+
+.component-showcase--tall {
+  min-height: 400px;
+}
+
+/* Documentation helper */
+.code-example {
+  background-color: var(--color-dark-gray);
+  color: var(--color-white);
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-body-sm);
+  line-height: 1.5;
+  margin: var(--space-md) 0;
+}
+
+.code-example code {
+  color: var(--color-white);
+}
+
+/* Section spacing */
+.component-section {
+  margin: var(--space-2xl) 0;
+  padding: var(--space-lg);
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.component-section h2 {
+  margin-top: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .modal {
+    width: 90vw;
+    max-height: 80vh;
+  }
+
+  .notification {
+    width: calc(100vw - 2 * var(--space-lg));
+    max-width: var(--notification-width);
+  }
+
+  .modal__footer {
+    flex-direction: column-reverse;
+  }
+
+  .modal__footer .btn {
+    width: 100%;
+  }
+
+  .tooltip {
+    max-width: 150px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .notification,
+  .modal-overlay,
+  .tooltip {
+    display: none !important;
+  }
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h3>Menu</h3>
+      <nav>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <header class="hero">
+        <h1>John Doe</h1>
+        <p class="subtitle">Web Developer</p>
+      </header>
+
+      <section id="about">
+        <h2>About Me</h2>
+        <p>I am a web developer with 5 years of experience building websites and web applications.</p>
+      </section>
+
+      <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-card">HTML</div>
+          <div class="skill-card">CSS</div>
+          <div class="skill-card">JavaScript</div>
+          <div class="skill-card">React</div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <h3>E-commerce Site</h3>
+            <p>Built a full-stack e-commerce platform</p>
+            <div class="project-details" style="display: none;">
+              <p><strong>Technologies:</strong> React, Node.js, MongoDB</p>
+              <p><strong>Year:</strong> 2023</p>
+            </div>
+            <small class="toggle-details">[Click for details]</small>
+          </div>
+          <div class="project-card">
+            <h3>Blog Application</h3>
+            <p>Created a blog app with user authentication</p>
+            <div class="project-details" style="display: none;">
+              <p><strong>Technologies:</strong> JavaScript, Express, PostgreSQL</p>
+              <p><strong>Year:</strong> 2022</p>
+            </div>
+            <small class="toggle-details">[Click for details]</small>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <form id="contactForm">
+          <input type="email" placeholder="Your email" id="emailInput" required>
+          <textarea placeholder="Your message" id="messageInput" rows="4" required></textarea>
+          <button type="submit">Send Message</button>
+          <div id="successMessage" style="display: none; color: green; margin-top: 10px;">
+            ✓ Message sent successfully!
+          </div>
+        </form>
+        <p style="margin-top: 20px;">Email: john@example.com</p>
+        <p>Phone: (555) 123-4567</p>
+      </section>
+
+      <footer>
+        <p>© 2024 John Doe. All rights reserved.</p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
