@@ -16,126 +16,151 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: var(--font-family-base);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             background-color: var(--color-lighter-gray);
             color: var(--color-charcoal);
-            line-height: var(--line-height-normal);
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1120px;
             margin: 0 auto;
-            padding: var(--space-lg);
+            padding: 0 var(--space-lg);
         }
 
+        /* ===== HEADER ===== */
         header {
             background-color: var(--color-white);
-            padding: var(--space-xl);
-            border-radius: var(--radius-lg);
-            margin-bottom: var(--space-2xl);
-            box-shadow: var(--shadow-sm);
-            border-left: 4px solid var(--color-primary);
+            padding: var(--space-2xl) var(--space-lg);
+            margin-bottom: var(--space-3xl);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--space-xl);
         }
 
         header h1 {
-            color: var(--color-primary);
-            font-size: var(--font-size-h1);
-            margin-bottom: var(--space-md);
+            color: var(--color-charcoal);
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.01em;
         }
 
-        header p {
-            color: var(--color-gray);
-            margin-bottom: var(--space-sm);
+        .theme-toggle {
+            padding: var(--space-md) var(--space-lg);
+            background-color: var(--color-lighter-gray);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            font-size: 20px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            line-height: 1;
         }
 
-        .badge {
-            display: inline-block;
-            background-color: var(--color-success);
-            color: var(--color-white);
-            padding: var(--space-xs) var(--space-sm);
-            border-radius: var(--radius-full);
-            font-size: var(--font-size-body-sm);
-            font-weight: var(--font-weight-semibold);
-            margin-top: var(--space-md);
+        .theme-toggle:hover {
+            background-color: var(--color-light-gray);
+            border-color: var(--color-primary);
         }
 
+        /* ===== BUTTONS ===== */
         .btn {
-            padding: var(--space-sm) var(--space-lg);
+            padding: 10px 18px;
             border: none;
             border-radius: var(--radius-md);
-            font-size: var(--font-size-body);
-            font-weight: var(--font-weight-semibold);
+            font-size: 14px;
+            font-weight: 600;
             cursor: pointer;
-            transition: all var(--transition-quick);
-            font-family: var(--font-family-base);
+            transition: all 0.2s ease;
+            font-family: inherit;
             display: inline-block;
+            text-decoration: none;
         }
 
         .btn--primary {
             background-color: var(--color-primary);
-            color: var(--color-white);
+            color: white;
         }
 
         .btn--primary:hover {
             background-color: var(--color-primary-dark);
-            box-shadow: var(--shadow-primary);
         }
 
         .btn--secondary {
-            background-color: var(--color-white);
+            background-color: transparent;
             color: var(--color-primary);
-            border: 2px solid var(--color-primary);
+            border: 1px solid var(--color-border);
         }
 
         .btn--secondary:hover {
-            background-color: var(--color-primary-lighter);
+            background-color: var(--color-lighter-gray);
+            border-color: var(--color-primary);
         }
 
-        .btn--danger {
-            background-color: var(--color-error);
-            color: var(--color-white);
-        }
-
-        .btn--danger:hover {
-            background-color: #c12a2a;
-        }
-
+        /* ===== SECTIONS ===== */
         .section {
             background-color: var(--color-white);
-            border-radius: var(--radius-lg);
-            padding: var(--space-xl);
+            border-radius: 8px;
+            padding: var(--space-2xl);
             margin-bottom: var(--space-2xl);
-            box-shadow: var(--shadow-sm);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            transition: all 0.2s ease;
+        }
+
+        .section:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
         }
 
         .section h2 {
-            color: var(--color-primary);
-            font-size: var(--font-size-h2);
-            margin-bottom: var(--space-lg);
-            padding-bottom: var(--space-md);
-            border-bottom: 2px solid var(--color-light-gray);
+            color: var(--color-charcoal);
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+            letter-spacing: -0.01em;
         }
 
         .section h3 {
             margin-top: var(--space-lg);
             margin-bottom: var(--space-md);
-            color: var(--color-charcoal);
+            color: var(--color-gray);
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
         }
 
         .description {
             color: var(--color-gray);
             margin-bottom: var(--space-lg);
-            line-height: var(--line-height-loose);
+            line-height: 1.7;
+            font-size: 15px;
         }
 
+        /* ===== DEMO AREA ===== */
         .demo-area {
-            background-color: var(--color-lighter-gray);
-            border: 2px dashed var(--color-light-gray);
-            border-radius: var(--radius-md);
-            padding: var(--space-xl);
-            margin: var(--space-lg) 0;
-            min-height: 200px;
+            background: linear-gradient(135deg, var(--color-lighter-gray) 0%, var(--color-white) 100%);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: var(--space-2xl);
+            margin: var(--space-xl) 0;
+            min-height: 150px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -144,13 +169,13 @@
         }
 
         .demo-area--tall {
-            min-height: 350px;
+            min-height: 250px;
         }
 
         .demo-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: var(--space-lg);
+            grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+            gap: var(--space-md);
             width: 100%;
         }
 
@@ -159,237 +184,230 @@
         }
 
         .demo-item label {
-            font-size: var(--font-size-body-sm);
-            color: var(--color-text-muted);
+            font-size: 11px;
+            color: var(--color-gray);
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.07em;
             display: block;
-            margin-top: var(--space-md);
+            margin-top: var(--space-sm);
+            font-weight: 600;
         }
 
+        /* ===== DOCUMENTATION LINKS ===== */
         .docs-link {
-            margin-top: var(--space-lg);
-            padding-top: var(--space-lg);
-            border-top: 1px solid var(--color-border);
+            margin-top: var(--space-xl);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: var(--space-md);
         }
 
         .docs-link a {
-            display: inline-block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-lg);
+            background: linear-gradient(135deg, var(--color-lighter-gray) 0%, var(--color-white) 100%);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
             color: var(--color-primary);
             text-decoration: none;
-            font-weight: var(--font-weight-semibold);
-            padding: var(--space-xs) var(--space-md);
-            margin-right: var(--space-md);
-            margin-top: var(--space-sm);
-            border-radius: var(--radius-md);
-            transition: all var(--transition-quick);
+            font-weight: 500;
+            font-size: 13px;
+            text-align: center;
+            transition: all 0.2s ease;
         }
 
         .docs-link a:hover {
-            background-color: var(--color-primary-lighter);
-            text-decoration: underline;
+            background: var(--color-white);
+            border-color: var(--color-primary);
+            box-shadow: 0 4px 12px rgba(0, 102, 204, 0.12);
         }
 
+        /* ===== FOOTER ===== */
         footer {
             background-color: var(--color-white);
-            padding: var(--space-xl);
-            border-radius: var(--radius-lg);
+            padding: var(--space-2xl);
+            border-radius: 8px;
             text-align: center;
-            color: var(--color-text-muted);
-            box-shadow: var(--shadow-sm);
-            margin-top: var(--space-2xl);
-        }
-
-        footer h3 {
-            color: var(--color-charcoal);
-            margin-bottom: var(--space-md);
+            color: var(--color-gray);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            margin-top: var(--space-3xl);
+            margin-bottom: var(--space-lg);
         }
 
         footer p {
-            margin: var(--space-sm) 0;
+            margin: 6px 0;
+            font-size: 13px;
+            line-height: 1.8;
         }
 
+        footer p strong {
+            color: var(--color-charcoal);
+            font-weight: 600;
+        }
+
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
+            header .container {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            header h1 {
+                font-size: 24px;
+            }
+
             .demo-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .docs-link {
                 grid-template-columns: 1fr;
             }
 
-            .docs-link a {
-                display: block;
-                text-align: center;
-                margin-right: 0;
+            .section {
+                padding: var(--space-lg);
             }
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Design System</h1>
+            <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+                <span id="themeIcon">🌙</span>
+            </button>
+        </div>
+    </header>
+
     <div class="container">
-        <!-- Header -->
-        <header>
-            <h1>Design System Components</h1>
-            <p><strong>3 Production-Ready Components</strong> built with design tokens</p>
-            <span class="badge">✓ Completed</span>
-        </header>
 
         <!-- ========== NOTIFICATION COMPONENT ========== -->
         <section class="section">
-            <h2>1. Notification/Toast</h2>
-            <p class="description">
-                Temporary messages for user feedback. 4 semantic types: success, error, warning, info.
-            </p>
+            <h2>Notification</h2>
+            <p class="description">Toast notifications with 4 semantic types. Auto-dismiss after 5 seconds.</p>
 
-            <h3>Try it:</h3>
+            <h3>Try it</h3>
             <div class="demo-area">
                 <div class="demo-grid">
                     <div class="demo-item">
-                        <button class="btn btn--primary" onclick="showNotification('success')">
-                            Show Success
-                        </button>
+                        <button class="btn btn--primary" onclick="showNotification('success')">Success</button>
                         <label>Success</label>
                     </div>
                     <div class="demo-item">
-                        <button class="btn btn--primary" onclick="showNotification('error')">
-                            Show Error
-                        </button>
+                        <button class="btn btn--primary" onclick="showNotification('error')">Error</button>
                         <label>Error</label>
                     </div>
                     <div class="demo-item">
-                        <button class="btn btn--primary" onclick="showNotification('warning')">
-                            Show Warning
-                        </button>
+                        <button class="btn btn--primary" onclick="showNotification('warning')">Warning</button>
                         <label>Warning</label>
                     </div>
                     <div class="demo-item">
-                        <button class="btn btn--primary" onclick="showNotification('info')">
-                            Show Info
-                        </button>
+                        <button class="btn btn--primary" onclick="showNotification('info')">Info</button>
                         <label>Info</label>
                     </div>
                 </div>
-            </div>
-
-            <div class="docs-link">
-                <a href="IMPLEMENTATION_GUIDE.md">📖 View Implementation Guide</a>
             </div>
         </section>
 
         <!-- ========== MODAL COMPONENT ========== -->
         <section class="section">
-            <h2>2. Modal/Dialog</h2>
-            <p class="description">
-                Centered overlay dialogs. 3 size variants: small, medium, large.
-            </p>
+            <h2>Modal</h2>
+            <p class="description">Centered overlay dialogs with 3 size variants: small, medium, large.</p>
 
-            <h3>Try it:</h3>
+            <h3>Try it</h3>
             <div class="demo-area">
                 <div class="demo-grid">
                     <div class="demo-item">
-                        <button class="btn btn--primary" onclick="showModal('sm')">
-                            Small Modal
-                        </button>
-                        <label>Compact</label>
+                        <button class="btn btn--primary" onclick="showModal('sm')">Small</button>
+                        <label>Compact (400px)</label>
                     </div>
                     <div class="demo-item">
-                        <button class="btn btn--primary" onclick="showModal('md')">
-                            Medium Modal
-                        </button>
-                        <label>Standard</label>
+                        <button class="btn btn--primary" onclick="showModal('md')">Medium</button>
+                        <label>Standard (600px)</label>
                     </div>
                     <div class="demo-item">
-                        <button class="btn btn--primary" onclick="showModal('lg')">
-                            Large Modal
-                        </button>
-                        <label>Full Width</label>
+                        <button class="btn btn--primary" onclick="showModal('lg')">Large</button>
+                        <label>Expanded (800px)</label>
                     </div>
                 </div>
-            </div>
-
-            <div class="docs-link">
-                <a href="IMPLEMENTATION_GUIDE.md">📖 View Implementation Guide</a>
             </div>
         </section>
 
         <!-- ========== TOOLTIP COMPONENT ========== -->
         <section class="section">
-            <h2>3. Tooltip</h2>
-            <p class="description">
-                Contextual help on hover. 4 positions and 5 color variants.
-            </p>
+            <h2>Tooltip</h2>
+            <p class="description">Contextual help on hover. 4 positions and 5 color variants.</p>
 
-            <h3>Try it (hover over buttons):</h3>
+            <h3>Try it (hover)</h3>
             <div class="demo-area demo-area--tall">
-                <div style="width: 100%; display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-xl);">
+                <div style="width: 100%; display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-lg);">
                     <!-- Positions -->
                     <div class="tooltip-container">
                         <button class="btn btn--secondary">Top</button>
-                        <div class="tooltip tooltip--top tooltip--light">Tooltip on top</div>
+                        <div class="tooltip tooltip--top tooltip--light">Tooltip</div>
                     </div>
 
                     <div class="tooltip-container">
                         <button class="btn btn--secondary">Bottom</button>
-                        <div class="tooltip tooltip--bottom tooltip--light">Tooltip on bottom</div>
+                        <div class="tooltip tooltip--bottom tooltip--light">Tooltip</div>
                     </div>
 
                     <div class="tooltip-container">
                         <button class="btn btn--secondary">Left</button>
-                        <div class="tooltip tooltip--left tooltip--light">Left side</div>
+                        <div class="tooltip tooltip--left tooltip--light">Tooltip</div>
                     </div>
 
                     <div class="tooltip-container">
                         <button class="btn btn--secondary">Right</button>
-                        <div class="tooltip tooltip--right tooltip--light">Right side</div>
+                        <div class="tooltip tooltip--right tooltip--light">Tooltip</div>
                     </div>
 
                     <!-- Color Variants -->
                     <div class="tooltip-container">
                         <button class="btn btn--secondary">Success</button>
-                        <div class="tooltip tooltip--bottom tooltip--success">✓ Success</div>
+                        <div class="tooltip tooltip--bottom tooltip--success">Success</div>
                     </div>
 
                     <div class="tooltip-container">
                         <button class="btn btn--secondary">Error</button>
-                        <div class="tooltip tooltip--bottom tooltip--error">✕ Error</div>
+                        <div class="tooltip tooltip--bottom tooltip--error">Error</div>
                     </div>
 
                     <div class="tooltip-container">
                         <button class="btn btn--secondary">Warning</button>
-                        <div class="tooltip tooltip--bottom tooltip--warning">⚠ Warning</div>
+                        <div class="tooltip tooltip--bottom tooltip--warning">Warning</div>
                     </div>
 
                     <div class="tooltip-container">
                         <button class="btn btn--secondary">Info</button>
-                        <div class="tooltip tooltip--bottom tooltip--info">ℹ Info</div>
+                        <div class="tooltip tooltip--bottom tooltip--info">Info</div>
                     </div>
                 </div>
-            </div>
-
-            <div class="docs-link">
-                <a href="IMPLEMENTATION_GUIDE.md">📖 View Implementation Guide</a>
             </div>
         </section>
 
         <!-- ========== DOCUMENTATION ========== -->
         <section class="section">
-            <h2>📚 Documentation</h2>
-            <p class="description">
-                Complete guides for developers and designers.
-            </p>
+            <h2>Assignment Documentation</h2>
+            <p class="description"><strong>Option A:</strong> 3 components (Notification, Modal, Tooltip) built with design tokens. <strong>Option B:</strong> Dark/Light theme switcher with localStorage persistence and WCAG AA contrast compliance. Toggle the theme above.</p>
 
+            <h3>Guides</h3>
             <div class="docs-link">
-                <a href="IMPLEMENTATION_GUIDE.md">📘 Implementation Guide</a>
-                <a href="ENHANCED_DESIGN_SYSTEM.md">📗 Full Documentation</a>
-                <a href="README.md">📄 Quick Start</a>
-                <a href="REFLECTION.md">💭 Learning Notes</a>
+                <a href="IMPLEMENTATION_GUIDE.md">Implementation Guide</a>
+                <a href="ENHANCED_DESIGN_SYSTEM.md">Design System Docs</a>
+                <a href="THEME_GUIDE.md">Theme Guide (Option B)</a>
+                <a href="README.md">Quick Start</a>
             </div>
         </section>
 
         <!-- Footer -->
         <footer>
-            <h3>Design System Components v1.0</h3>
-            <p>Built with design tokens • Fully responsive • Accessible</p>
-            <p style="font-size: var(--font-size-body-sm); margin-top: var(--space-lg);">
-                All components use design tokens for consistency and easy customization.
-            </p>
+            <p><strong>Option A:</strong> Notification • Modal • Tooltip</p>
+            <p><strong>Option B:</strong> Dark/Light Theme with localStorage</p>
+            <p style="margin-top: var(--space-lg);">All components use design tokens. WCAG AA accessible. Fully responsive.</p>
         </footer>
     </div>
 
@@ -412,6 +430,46 @@
     </div>
 
     <script>
+        // ===== DARK MODE THEME TOGGLE (OPTION B) =====
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const html = document.documentElement;
+
+        // Initialize theme from localStorage or system preference
+        function initializeTheme() {
+            const savedTheme = localStorage.getItem('design-system-theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const isDarkMode = savedTheme ? savedTheme === 'dark' : prefersDark;
+            
+            setTheme(isDarkMode);
+        }
+
+        function setTheme(isDarkMode) {
+            if (isDarkMode) {
+                html.classList.add('dark-mode');
+                themeIcon.textContent = '☀️';
+                themeIcon.title = 'Switch to light mode';
+                themeToggle.title = 'Light Mode';
+                localStorage.setItem('design-system-theme', 'dark');
+            } else {
+                html.classList.remove('dark-mode');
+                themeIcon.textContent = '🌙';
+                themeIcon.title = 'Switch to dark mode';
+                themeToggle.title = 'Dark Mode';
+                localStorage.setItem('design-system-theme', 'light');
+            }
+        }
+
+        // Toggle theme on button click
+        themeToggle.addEventListener('click', () => {
+            const isDarkMode = html.classList.contains('dark-mode');
+            setTheme(!isDarkMode);
+        });
+
+        // Initialize theme on page load
+        initializeTheme();
+
+        // ===== COMPONENT FUNCTIONALITY =====
         // Show notification
         function showNotification(type) {
             const messages = {

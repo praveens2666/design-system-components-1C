@@ -1,10 +1,71 @@
 /* ========================================
    EXTENDED DESIGN SYSTEM TOKENS
-   Option A: New Components
+   Option A: New Components + Option B: Dark Mode
    ======================================== */
 
 /* Import base tokens from version 7 */
 @import url("../../07-design-system/design-tokens.css");
+
+/* ========== DARK MODE THEME ========== */
+:root.dark-mode {
+  /* Dark Background Colors */
+  --color-background: #1a1a1a;
+  --color-white: #0d0d0d;
+  --color-lighter-gray: #1f1f1f;
+  --color-light-gray: #2a2a2a;
+  --color-border: #404040;
+
+  /* Dark Text Colors */
+  --color-charcoal: #e0e0e0;
+  --color-dark-gray: #d0d0d0;
+  --color-gray: #909090;
+  --color-text-muted: #707070;
+
+  /* Primary Colors - Adjusted for dark mode */
+  --color-primary: #5ba3ff;
+  --color-primary-dark: #3d82dd;
+  --color-primary-light: #1a3a5c;
+  --color-primary-lighter: #0f1f2e;
+
+  /* Semantic Colors - Dark Mode */
+  --color-success: #4ade80;
+  --color-success-dark: #22c55e;
+  --color-success-light: #1a3a24;
+  --color-success-bg: #0f2818;
+  --color-success-text: #4ade80;
+
+  --color-error: #ff6b6b;
+  --color-error-dark: #ff5252;
+  --color-error-light: #3a1f1f;
+  --color-error-bg: #2a0f0f;
+  --color-error-text: #ff8787;
+
+  --color-warning: #fbbf24;
+  --color-warning-dark: #f59e0b;
+  --color-warning-light: #3a2f1f;
+  --color-warning-bg: #2a1f0f;
+  --color-warning-text: #fcd34d;
+
+  --color-info: #38bdf8;
+  --color-info-dark: #0ea5e9;
+  --color-info-light: #1a2f3a;
+  --color-info-bg: #0f1f2a;
+  --color-info-text: #38bdf8;
+
+  /* Light Variants */
+  --color-success-lighter: #051612;
+  --color-error-lighter: #250909;
+  --color-warning-lighter: #250f00;
+  --color-info-lighter: #0a161f;
+  --color-neutral-light: #2a2a2a;
+
+  /* Shadows - Adjusted for dark mode (more subtle) */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 8px 16px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.7);
+  --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.8);
+  --shadow-primary: 0 4px 12px rgba(91, 163, 255, 0.3);
+}
 
 /* ========== NEW TOKENS FOR COMPONENTS ========== */
 

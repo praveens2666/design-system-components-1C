@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Design System Extensions - Intermediate</title>
+    
+    <!-- Link to the base design system tokens -->
+    <link rel="stylesheet" href="../../07-design-system/design-tokens.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--color-background);
+            color: var(--color-text);
+            line-height: var(--line-height-body);
+            padding: var(--space-lg);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: var(--space-xl);
+            border-bottom: 2px solid var(--color-primary);
+            padding-bottom: var(--space-lg);
+        }
+
+        h1 {
+            color: var(--color-primary);
+            font-size: var(--font-size-h1);
+            margin-bottom: var(--space-md);
+        }
+
+        h2 {
+            color: var(--color-primary-dark);
+            font-size: var(--font-size-h2);
+            margin-top: var(--space-lg);
+            margin-bottom: var(--space-md);
+        }
+
+        h3 {
+            color: var(--color-text);
+            font-size: var(--font-size-h3);
+            margin-top: var(--space-md);
+            margin-bottom: var(--space-sm);
+        }
+
+        section {
+            background-color: var(--color-white);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            padding: var(--space-lg);
+            margin-bottom: var(--space-lg);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .note {
+            background-color: var(--color-info-light);
+            border-left: 4px solid var(--color-info);
+            padding: var(--space-md);
+            margin: var(--space-md) 0;
+            border-radius: var(--border-radius);
+        }
+
+        .code-block {
+            background-color: var(--color-background);
+            border: 1px solid var(--color-border);
+            padding: var(--space-md);
+            margin: var(--space-md) 0;
+            border-radius: var(--border-radius);
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: var(--font-size-sm);
+        }
+
+        /* COMPONENT SHOWCASE - Update these as you add components */
+        .component-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-lg);
+            margin: var(--space-lg) 0;
+        }
+
+        .component-card {
+            border: 1px solid var(--color-border);
+            padding: var(--space-md);
+            border-radius: var(--border-radius);
+            background-color: var(--color-white);
+        }
+
+        .component-name {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: var(--space-sm);
+        }
+
+        /* Checklist for progress tracking */
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+
+        .checklist li {
+            padding: var(--space-sm) 0;
+            padding-left: var(--space-lg);
+            position: relative;
+        }
+
+        .checklist li:before {
+            content: "?";
+            position: absolute;
+            left: 0;
+            color: var(--color-primary);
+            font-weight: bold;
+        }
+
+        .checklist li.done:before {
+            content: "?";
+        }
+
+        /* Status badge */
+        .status {
+            display: inline-block;
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: var(--border-radius);
+            font-size: var(--font-size-xs);
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .status.in-progress {
+            background-color: var(--color-warning-light);
+            color: var(--color-warning-dark);
+        }
+
+        .status.completed {
+            background-color: var(--color-success-light);
+            color: var(--color-success-dark);
+        }
+
+        .status.not-started {
+            background-color: var(--color-neutral-light);
+            color: var(--color-text);
+        }
+
+        .tabs {
+            display: flex;
+            gap: 0;
+            border-bottom: 2px solid var(--color-border);
+            margin: var(--space-md) 0;
+        }
+
+        .tab-button {
+            padding: var(--space-md) var(--space-lg);
+            background: none;
+            border: none;
+            color: var(--color-text-muted);
+            font-size: var(--font-size-body);
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all var(--transition-normal);
+        }
+
+        .tab-button.active {
+            color: var(--color-primary);
+            border-bottom-color: var(--color-primary);
+        }
+
+        .tab-button:hover {
+            color: var(--color-primary);
+        }
+
+        .tab-content {
+            display: none;
+            animation: slideIn var(--transition-normal);
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        footer {
+            margin-top: var(--space-xl);
+            padding-top: var(--space-lg);
+            border-top: 1px solid var(--color-border);
+            color: var(--color-text-muted);
+            font-size: var(--font-size-sm);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Design System Extensions</h1>
+            <p>Student: _________________ | Due: _________________</p>
+            <p><span class="status in-progress">In Progress</span></p>
+        </header>
+
+        <!-- Project Selection -->
+        <section>
+            <h2>Project Selection</h2>
+            <p>Choose ONE of the following challenges:</p>
+            <ul class="checklist">
+                <li>
+                    <input type="checkbox"> 
+                    <strong>Option A:</strong> Add 3 new components to the system
+                </li>
+                <li>
+                    <input type="checkbox"> 
+                    <strong>Option B:</strong> Implement light/dark theme switcher
+                </li>
+                <li>
+                    <input type="checkbox"> 
+                    <strong>Option C:</strong> Accessibility audit and improvements
+                </li>
+            </ul>
+            <p><strong>I chose:</strong> <input type="text" style="border: none; border-bottom: 1px solid #ccc; width: 200px;"></p>
+        </section>
+
+        <!-- Option A: New Components -->
+        <section>
+            <h2>Option A: New Components</h2>
+            <p>Add 3 of these 6 components to the design system:</p>
+
+            <div class="tabs">
+                <button class="tab-button active" onclick="showTab('pill-badge')">Pill Badge</button>
+                <button class="tab-button" onclick="showTab('tooltip')">Tooltip</button>
+                <button class="tab-button" onclick="showTab('breadcrumb')">Breadcrumb</button>
+                <button class="tab-button" onclick="showTab('progress-bar')">Progress Bar</button>
+                <button class="tab-button" onclick="showTab('tag-chip')">Tag/Chip</button>
+                <button class="tab-button" onclick="showTab('stepper')">Stepper</button>
+            </div>
+
+            <!-- Pill Badge Tab -->
+            <div id="pill-badge" class="tab-content active">
+                <h3>Pill Badge</h3>
+                <p>Small rounded badge for labels and counts.</p>
+                <div class="component-grid">
+                    <div class="component-card">
+                        <div class="component-name">Example 1</div>
+                        <span style="background-color: var(--color-primary); color: white; padding: var(--space-xs) var(--space-sm); border-radius: 20px; font-size: var(--font-size-xs);">New</span>
+                    </div>
+                </div>
+                <div class="code-block">
+/* Create a CSS class for Pill Badge */
+.badge--pill {
+    /* Your CSS here */
+    border-radius: 20px;
+    /* Add more properties */
+}
+                </div>
+                <div class="note">
+                    <strong>Hint:</strong> Use border-radius to create pill shape. Consider sizes: small, medium, large.
+                </div>
+                <ul class="checklist">
+                    <li>CSS created</li>
+                    <li>Multiple sizes added</li>
+                    <li>Multiple color variants</li>
+                    <li>Documentation written</li>
+                </ul>
+            </div>
+
+            <!-- Tooltip Tab -->
+            <div id="tooltip" class="tab-content">
+                <h3>Tooltip</h3>
+                <p>Small text popup that appears on hover.</p>
+                <div class="code-block">
+/* Tooltip CSS */
+.tooltip {
+    /* Your CSS here */
+    position: relative;
+}
+                </div>
+                <div class="note">
+                    <strong>Hint:</strong> Use CSS ::before or ::after pseudo-elements. Consider hover state.
+                </div>
+                <ul class="checklist">
+                    <li>CSS created</li>
+                    <li>Multiple positions (top, bottom, left, right)</li>
+                    <li>Hover trigger works</li>
+                    <li>Documentation written</li>
+                </ul>
+            </div>
+
+            <!-- Similar structure for other components -->
+            <div id="breadcrumb" class="tab-content">
+                <h3>Breadcrumb</h3>
+                <p>Navigation hierarchy showing current page location.</p>
+                <ul class="checklist">
+                    <li>CSS created</li>
+                    <li>Multiple levels</li>
+                    <li>Separators styled</li>
+                    <li>Documentation written</li>
+                </ul>
+            </div>
+
+            <div id="progress-bar" class="tab-content">
+                <h3>Progress Bar</h3>
+                <p>Visual indicator of progress through a process.</p>
+                <ul class="checklist">
+                    <li>CSS created</li>
+                    <li>Multiple percentages</li>
+                    <li>Animated option</li>
+                    <li>Documentation written</li>
+                </ul>
+            </div>
+
+            <div id="tag-chip" class="tab-content">
+                <h3>Tag/Chip</h3>
+                <p>Removable or readonly label component.</p>
+                <ul class="checklist">
+                    <li>CSS created</li>
+                    <li>Removable variant with X</li>
+                    <li>Readonly variant</li>
+                    <li>Documentation written</li>
+                </ul>
+            </div>
+
+            <div id="stepper" class="tab-content">
+                <h3>Stepper</h3>
+                <p>Multi-step process indicator.</p>
+                <ul class="checklist">
+                    <li>CSS created</li>
+                    <li>Step indicators</li>
+                    <li>Active state styling</li>
+                    <li>Documentation written</li>
+                </ul>
+            </div>
+
+            <p style="margin-top: var(--space-lg); color: var(--color-text-muted);">
+                <strong>Components added:</strong> <input type="text" style="border: none; border-bottom: 1px solid #ccc; width: 400px;">
+            </p>
+        </section>
+
+        <!-- Option B: Light/Dark Theme -->
+        <section>
+            <h2>Option B: Light/Dark Theme Switcher</h2>
+            <p>Add a theme toggle that switches between light and dark modes.</p>
+
+            <div class="code-block">
+/* Add these color tokens for dark mode */
+:root.dark-mode {
+    --color-background: #1a1a1a;
+    --color-text: #ffffff;
+    /* Add more token overrides */
+}
+            </div>
+
+            <div class="note">
+                <strong>Requirements:</strong>
+                <ul>
+                    <li>Add data-theme attribute or .dark-mode class</li>
+                    <li>Create JavaScript toggle button</li>
+                    <li>Override at least 15 tokens in dark mode</li>
+                    <li>Persist preference in localStorage</li>
+                    <li>Test contrast ratios (WCAG AA)</li>
+                </ul>
+            </div>
+
+            <ul class="checklist">
+                <li>Dark mode tokens added</li>
+                <li>Toggle button created</li>
+                <li>Smooth transitions</li>
+                <li>localStorage persistence</li>
+                <li>Contrast verified</li>
+            </ul>
+        </section>
+
+        <!-- Option C: Accessibility Improvements -->
+        <section>
+            <h2>Option C: Accessibility Audit & Improvements</h2>
+            <p>Audit the design system and recommend/implement improvements.</p>
+
+            <div class="note">
+                <strong>Audit Checklist:</strong>
+                <ul style="margin-left: var(--space-lg);">
+                    <li>Color contrast ratios (target WCAG AA or AAA)</li>
+                    <li>Font sizes and readability</li>
+                    <li>Focus states on interactive elements</li>
+                    <li>Spacing for touch targets (min 44px)</li>
+                    <li>Motion and animation preferences</li>
+                    <li>Keyboard navigation support</li>
+                </ul>
+            </div>
+
+            <ul class="checklist">
+                <li>Audit completed</li>
+                <li>Issues documented</li>
+                <li>2+ improvements implemented</li>
+                <li>Contrast verified</li>
+                <li>Focus states added</li>
+            </ul>
+        </section>
+
+        <!-- Common Requirements -->
+        <section>
+            <h2>? Requirements for All Options</h2>
+            <ul class="checklist">
+                <li>Use existing design tokens (no hardcoding colors)</li>
+                <li>Maintain consistency with Version 7 system</li>
+                <li>Update design-tokens.css with new tokens if needed</li>
+                <li>Create component showcase in index.html</li>
+                <li>Write clear CSS comments</li>
+                <li>Create or update DESIGN_SYSTEM.md documentation</li>
+                <li>Test in at least 2 browsers</li>
+                <li>Ensure responsive design</li>
+                <li>Valid HTML and CSS (no errors)</li>
+            </ul>
+        </section>
+
+        <!-- Submission -->
+        <section style="background-color: #e8f4f8;">
+            <h2>?? Submission</h2>
+            <h3>Files to Submit:</h3>
+            <ul>
+                <li><code>index.html</code> - Component showcase</li>
+                <li><code>design-tokens.css</code> - Updated tokens (if modified)</li>
+                <li><code>styles.css</code> - Your new component styles</li>
+                <li><code>DESIGN_SYSTEM.md</code> - Documentation updates</li>
+                <li><code>REFLECTION.md</code> - Your learning notes</li>
+            </ul>
+            <h3>What to write in REFLECTION.md:</h3>
+            <ul>
+                <li>What you learned</li>
+                <li>Challenges encountered</li>
+                <li>How tokens helped consistency</li>
+                <li>What would you do differently</li>
+            </ul>
+        </section>
+
+        <footer>
+            <p>Good luck! ?? Remember to save your work frequently and test often.</p>
+        </footer>
+    </div>
+
+    <script>
+        function showTab(tabName) {
+            // Hide all tabs
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // Show selected tab
+            document.getElementById(tabName).classList.add('active');
+
+            // Mark button as active
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
