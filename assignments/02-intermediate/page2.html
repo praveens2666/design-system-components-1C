@@ -120,8 +120,8 @@
 </head>
 <body>
     <div class="container">
-        <h1>Design System Token Exploration</h1>
-        <p><strong>Student Name:</strong> _________________ | <strong>Date:</strong> _________________</p>
+        <h1>Design System Token Exploration & Implementation</h1>
+        <p><strong>Team Members:</strong> Praveen S & Aravindh B| <strong>Date:</strong> April 3, 2026 </p>
 
         <!-- PART 1: Token Exploration -->
         <div class="section">
@@ -142,38 +142,38 @@
                 <tbody>
                     <tr>
                         <td><code>--color-primary</code></td>
-                        <td></td>
+                        <td>#0066cc</td>
                         <td><div class="token-sample" style="background-color: #0066cc;"></div></td>
-                        <td></td>
-                        <td></td>
+                        <td>Primary brand color for buttons & links</td>
+                        <td>Buttons, links, accents</td>
                     </tr>
                     <tr>
                         <td><code>--color-success</code></td>
-                        <td></td>
-                        <td><div class="token-sample"></div></td>
-                        <td></td>
-                        <td></td>
+                        <td>#10b981</td>
+                        <td><div class="token-sample" style="background-color: #10b981;"></div></td>
+                        <td>Indicates successful actions/status</td>
+                        <td>Success messages, checkmarks</td>
                     </tr>
                     <tr>
                         <td><code>--color-warning</code></td>
-                        <td></td>
-                        <td><div class="token-sample"></div></td>
-                        <td></td>
-                        <td></td>
+                        <td>#f59e0b</td>
+                        <td><div class="token-sample" style="background-color: #f59e0b;"></div></td>
+                        <td>Indicates warnings/caution</td>
+                        <td>Warning notifications, alerts</td>
                     </tr>
                     <tr>
-                        <td><code>--color-danger</code></td>
-                        <td></td>
-                        <td><div class="token-sample"></div></td>
-                        <td></td>
-                        <td></td>
+                        <td><code>--color-danger / --color-error</code></td>
+                        <td>#ef4444</td>
+                        <td><div class="token-sample" style="background-color: #ef4444;"></div></td>
+                        <td>Indicates errors/critical states</td>
+                        <td>Error messages, destructive actions</td>
                     </tr>
                     <tr>
-                        <td><code>--color-neutral</code></td>
-                        <td></td>
-                        <td><div class="token-sample"></div></td>
-                        <td></td>
-                        <td></td>
+                        <td><code>--color-neutral / --color-gray</code></td>
+                        <td>#6b7280</td>
+                        <td><div class="token-sample" style="background-color: #6b7280;"></div></td>
+                        <td>Secondary text and borders</td>
+                        <td>Disabled states, secondary text</td>
                     </tr>
                 </tbody>
             </table>
@@ -191,15 +191,27 @@
                 <tbody>
                     <tr>
                         <td><code>--font-size-h1</code></td>
-                        <td></td>
-                        <td><h3 style="margin: 0;">Heading 1 Example</h3></td>
-                        <td></td>
+                        <td>48px</td>
+                        <td><h3 style="margin: 0; font-size: 48px;">Heading 1</h3></td>
+                        <td>Main page headings</td>
+                    </tr>
+                    <tr>
+                        <td><code>--font-size-h2</code></td>
+                        <td>36px</td>
+                        <td><h3 style="margin: 0; font-size: 36px;">Heading 2</h3></td>
+                        <td>Section headings</td>
                     </tr>
                     <tr>
                         <td><code>--font-size-body</code></td>
-                        <td></td>
-                        <td>Body text example</td>
-                        <td></td>
+                        <td>16px</td>
+                        <td>Regular paragraph text</td>
+                        <td>Body content</td>
+                    </tr>
+                    <tr>
+                        <td><code>--font-size-body-sm</code></td>
+                        <td>14px</td>
+                        <td><small>Small body text</small></td>
+                        <td>Secondary content</td>
                     </tr>
                 </tbody>
             </table>
@@ -217,21 +229,33 @@
                 <tbody>
                     <tr>
                         <td><code>--space-xs</code></td>
-                        <td></td>
-                        <td><div style="height: 4px; background-color: #0066cc;"></div></td>
-                        <td></td>
+                        <td>4px</td>
+                        <td><div style="height: 4px; background-color: #0066cc; width: 100%;"></div></td>
+                        <td>Minimal spacing</td>
                     </tr>
                     <tr>
                         <td><code>--space-sm</code></td>
-                        <td></td>
-                        <td><div style="height: 8px; background-color: #0066cc;"></div></td>
-                        <td></td>
+                        <td>8px</td>
+                        <td><div style="height: 8px; background-color: #0066cc; width: 100%;"></div></td>
+                        <td>Small margins/padding</td>
                     </tr>
                     <tr>
                         <td><code>--space-md</code></td>
-                        <td></td>
-                        <td><div style="height: 16px; background-color: #0066cc;"></div></td>
-                        <td></td>
+                        <td>16px</td>
+                        <td><div style="height: 16px; background-color: #0066cc; width: 100%;"></div></td>
+                        <td>Standard spacing</td>
+                    </tr>
+                    <tr>
+                        <td><code>--space-lg</code></td>
+                        <td>24px</td>
+                        <td><div style="height: 24px; background-color: #0066cc; width: 100%;"></div></td>
+                        <td>Large margins/padding</td>
+                    </tr>
+                    <tr>
+                        <td><code>--space-xl</code></td>
+                        <td>32px</td>
+                        <td><div style="height: 32px; background-color: #0066cc; width: 100%;"></div></td>
+                        <td>Extra large spacing</td>
                     </tr>
                 </tbody>
             </table>
@@ -244,24 +268,24 @@
 
             <h3>Colors</h3>
             <ul>
-                <li>How many color tokens are defined? <input type="text" style="width: 50px;"> tokens</li>
-                <li>Are colors used consistently across all components? <input type="checkbox"> Yes <input type="checkbox"> No</li>
-                <li>What color is used for primary buttons? _________________</li>
-                <li>What color is used for error states? _________________</li>
+                <li>How many color tokens are defined? <strong>20+ tokens</strong></li>
+                <li>Are colors used consistently across all components? <input type="checkbox" checked> Yes <input type="checkbox"> No</li>
+                <li>What color is used for primary buttons? <strong>#0066cc (Primary Blue)</strong></li>
+                <li>What color is used for error states? <strong>#ef4444 (Red)</strong></li>
             </ul>
 
             <h3>Typography</h3>
             <ul>
-                <li>How many typography tokens are defined? <input type="text" style="width: 50px;"> tokens</li>
-                <li>What font-family is used? _________________</li>
-                <li>Is font size consistent across components? <input type="checkbox"> Yes <input type="checkbox"> No</li>
+                <li>How many typography tokens are defined? <strong>15+ tokens</strong></li>
+                <li>What font-family is used? <strong>-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto</strong></li>
+                <li>Is font size consistent across components? <input type="checkbox" checked> Yes <input type="checkbox"> No</li>
             </ul>
 
             <h3>Spacing</h3>
             <ul>
-                <li>What is the base spacing unit? <input type="text" style="width: 100px;"></li>
-                <li>Are padding values consistent? <input type="checkbox"> Yes <input type="checkbox"> No</li>
-                <li>Example of spacing used in buttons: _________________</li>
+                <li>What is the base spacing unit? <strong>4px (multiples: 4, 8, 16, 24, 32, 40, 48px)</strong></li>
+                <li>Are padding values consistent? <input type="checkbox" checked> Yes <input type="checkbox"> No</li>
+                <li>Example of spacing used in buttons: <strong>padding: 10px 18px (using space-md for gaps)</strong></li>
             </ul>
         </div>
 
@@ -282,27 +306,45 @@
                 <tbody>
                     <tr>
                         <td><strong>Color Approach</strong></td>
-                        <td></td>
-                        <td></td>
-                        <td>CSS Variables (tokens)</td>
+                        <td>None (plain text)</td>
+                        <td>Hardcoded hex values in CSS</td>
+                        <td>CSS Variables (design tokens)</td>
                     </tr>
                     <tr>
                         <td><strong>Styling Method</strong></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>No styling</td>
+                        <td>Individual CSS rules per element</td>
+                        <td>Token-based, reusable classes</td>
                     </tr>
                     <tr>
                         <td><strong>Code Reusability</strong></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>None</td>
+                        <td>Limited (manual changes needed)</td>
+                        <td>High (change token, all uses update)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Theme Support</strong></td>
+                        <td>Not possible</td>
+                        <td>Not possible</td>
+                        <td>Full dark/light mode support</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Consistency</strong></td>
+                        <td>N/A</td>
+                        <td>Manual management</td>
+                        <td>Automatic via tokens</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Scalability</strong></td>
+                        <td>Poor</td>
+                        <td>Fair</td>
+                        <td>Excellent</td>
                     </tr>
                     <tr>
                         <td><strong>Maintenance Difficulty</strong></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>Very High (change one value requires finding all uses)</td>
+                        <td>High (changes scattered across files)</td>
+                        <td>Very Low (update token, all uses update automatically)</td>
                     </tr>
                 </tbody>
             </table>
@@ -316,46 +358,98 @@
             <h3>Question 1: Why Use Tokens?</h3>
             <p><em>What are the main benefits of using design tokens instead of hardcoding colors and sizes?</em></p>
             <div class="code" style="min-height: 80px; background: white; border: 1px solid #ddd; padding: 15px;">
-                Design tokens provide multiple benefits over hardcoding values. First, they create a single source of truth - when you need to change a color or spacing value, you only modify it in one place and all components using that token automatically update. This dramatically reduces maintenance effort and the risk of inconsistencies. Second, tokens enable easy theme switching - you can create light/dark modes or different brand variations by simply changing token values without touching component CSS. Third, they improve team collaboration by establishing a common vocabulary between designers and developers, ensuring everyone uses the same values. Finally, tokens make design systems scalable and maintainable as projects grow, preventing "color drift" where similar but slightly different colors accumulate across an application.
+                Design tokens are an important concept in modern UI development because they help centralize all design-related values such as colors, spacing, and typography. Instead of hardcoding values repeatedly in different parts of the code, tokens allow developers to define them once and reuse them throughout the application. This makes the overall structure cleaner and easier to manage.
+                <br><br>
+                One of the biggest advantages of using tokens is maintainability. When a design change is required, such as updating a primary color or adjusting spacing, the developer only needs to modify the token value. This change is automatically reflected across all components that use that token. This reduces manual effort and avoids inconsistencies that often occur when values are hardcoded in multiple places.
+                <br><br>
+                Additionally, tokens improve collaboration between designers and developers. By using meaningful names like --color-primary or --space-md, both teams can communicate using a shared language. This ensures that the final product stays aligned with the design system and maintains consistency as the project grows.
             </div>
 
             <h3>Question 2: Token Organization</h3>
             <p><em>How are the tokens in Version 7 organized? What naming system is used?</em></p>
             <div class="code" style="min-height: 80px; background: white; border: 1px solid #ddd; padding: 15px;">
-                Version 7 uses a hierarchical naming convention that follows a clear pattern: --category-subcategory-variant. For example, --color-primary, --color-primary-dark, --color-primary-light. Tokens are organized into logical groups: Colors (primary, secondary, semantic), Typography (font-family, font-size, font-weight, line-height), Spacing (space-xs through space-5xl following an 8px scale), Border Radius (from sharp to full), Shadows (from sm to xl), Transitions (quick to slow), and Z-index. This organization makes tokens easy to discover and use. The naming system is semantic - tokens describe their purpose (--color-success) rather than appearance (--color-green), making them flexible for theming. Within each category, tokens scale logically (xs, sm, md, lg, xl) providing a consistent progression.
+                In Version 7, the tokens are organized using a clear and logical naming convention. The naming pattern generally follows a structure like --category-type-variant, which makes it easy to understand the purpose of each token. For example, --color-primary represents the main brand color, while --space-sm represents a small spacing unit.
+                <br><br>
+                The tokens are grouped into categories such as colors, typography, and spacing. Color tokens define different types of colors like primary, success, warning, and danger. Typography tokens manage font sizes and text styles, while spacing tokens ensure consistent margins and padding across components. This structured grouping makes the design system easy to navigate and use.
+                <br><br>
+                Another important aspect is the use of semantic naming. Instead of naming tokens based on their appearance (like "blue" or "red"), they are named based on their function (like "primary" or "error"). This makes the system flexible, as the actual values can change without affecting how they are used in the code.
             </div>
 
             <h3>Question 3: Consistency Impact</h3>
             <p><em>How do tokens help maintain visual consistency across a design system?</em></p>
             <div class="code" style="min-height: 80px; background: white; border: 1px solid #ddd; padding: 15px;">
-                Tokens enforce consistency by providing predefined, approved values that all components must use. When designers and developers reference var(--color-primary) instead of independently choosing colors, the whole system automatically stays aligned. Tokens eliminate the "color drift" problem where similar colors accumulate (--color-blue-1, --color-blue-2, --color-blue-3 all slightly different). They create visual hierarchy through semantic naming - all buttons use the same primary color, all body text uses the same font size, all component padding follows the same scale. This creates a cohesive user experience. Additionally, tokens make it easy to validate consistency - you can check if components are using only approved values. When brand guidelines change, updating a single token updates the entire system, ensuring nothing gets missed. Tokens also help new team members quickly understand the system and use correct values without guessing.
+                Design tokens play a crucial role in maintaining visual consistency across an application. By using predefined values, all components follow the same design rules, ensuring a uniform look and feel. For example, all buttons can use the same primary color and padding, while all text elements follow consistent font sizes.
+                <br><br>
+                Without tokens, developers may use slightly different values for colors, spacing, or typography, which leads to inconsistencies over time. This can make the user interface look unorganized and reduce the overall quality of the application. Tokens help avoid this issue by enforcing a standard set of values.
+                <br><br>
+                Furthermore, tokens make it easier to scale and update the design system. When a change is required, updating a single token ensures that the change is applied everywhere. This not only saves time but also guarantees that no component is left outdated, maintaining consistency throughout the application.
             </div>
 
             <h3>Question 4: Real-World Application</h3>
             <p><em>How could you use a token system in a real project you're working on?</em></p>
             <div class="code" style="min-height: 80px; background: white; border: 1px solid #ddd; padding: 15px;">
-                In a real project for a SaaS application, I would implement tokens to manage the entire design system. First, I'd define color tokens for brand colors (primary, secondary), semantic colors (success, warning, error, info), and neutral grays. For typography, I'd create font tokens for different text sizes (h1-h6, body, caption) to ensure consistent hierarchy. Spacing tokens would define margins, paddings, and gaps using a consistent scale. I'd create component library documentation showing which tokens each component uses. When the client requests a dark mode, I'd simply create a second set of token values without changing any CSS. For different brand clients, I could create brand-specific token files. This approach would reduce development time, ensure consistency across the entire application, and make future changes trivial - updating one token value would automatically update every button, card, and text field using it.
+                In a real-world project, such as a SaaS application or a web platform, design tokens can be used to build a strong and scalable design system. Initially, tokens would be defined for colors, including brand colors and semantic colors like success, warning, and error. This ensures that all components use a consistent color scheme.
+                <br><br>
+                Typography tokens would be created for headings, body text, and smaller text elements to maintain a clear visual hierarchy. Similarly, spacing tokens would define margins and padding to ensure proper alignment and layout across different sections of the application. This helps create a clean and professional user interface.
+                <br><br>
+                Tokens also make it easier to implement advanced features like dark mode or multi-brand support. Instead of rewriting styles, developers can simply update token values for different themes. This approach improves efficiency, reduces development time, and makes the application easier to maintain in the long run.
             </div>
 
             <h3>Question 5: Limitations</h3>
             <p><em>What are potential limitations or challenges with using CSS tokens for design systems?</em></p>
             <div class="code" style="min-height: 80px; background: white; border: 1px solid #ddd; padding: 15px;">
-                CSS tokens have some limitations. Browser support - CSS variables aren't supported in older browsers (IE11), requiring fallbacks. Runtime limitations - tokens can only be changed after the page loads, not during build time. Learning curve - teams must understand CSS variables and naming conventions. Documentation burden - tokens require clear documentation or developers will hardcode values instead. Complexity growth - large design systems can accumulate so many tokens they become hard to maintain. Type safety - CSS has no built-in validation, so any value can be assigned to any token. Performance - excessive nesting can increase CSS file size. Framework integration - some frameworks (like Material-UI) have their own token systems that don't interoperate well with CSS variables. File organization - without proper tooling, managing tokens across multiple files becomes difficult. Despite these limitations, the benefits of consistency and maintainability far outweigh the challenges in most modern projects.
+                Despite their advantages, design tokens also come with certain limitations. One of the main challenges is browser compatibility, as older browsers may not fully support CSS variables. This can require additional workarounds or fallback solutions.
+                <br><br>
+                Another limitation is the need for proper planning and documentation. If tokens are not well-organized or clearly defined, developers may become confused and start bypassing the system by hardcoding values. This can reduce the effectiveness of the design system.
+                <br><br>
+                Additionally, as projects grow larger, managing a large number of tokens can become complex. Without proper structure and naming conventions, the system may become difficult to maintain. However, with good practices and discipline, these challenges can be managed effectively, and the benefits of tokens usually outweigh the drawbacks.
             </div>
         </div>
 
         <!-- Submission Section -->
         <div class="section" style="background-color: #e8f4f8; border-left: 4px solid #0066cc;">
             <h2>Submission</h2>
+            <p><strong>Download PDF:</strong></p>
+            <button onclick="downloadPDF()" style="background-color: #0066cc; color: white; padding: 12px 24px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; margin-bottom: 20px;">
+                📥 Download as PDF
+            </button>
             <p><strong>What to submit:</strong></p>
             <ul>
-                <li>This completed HTML file (save as <code>analysis.html</code>)</li>
-                <li>OR: Export this page as PDF with all answers filled in</li>
+                <li>Downloaded PDF file</li>
+                <li>OR: This completed HTML file (save as <code>analysis.html</code>)</li>
                 <li>OR: Type your answers in a Word/Google doc and submit that</li>
             </ul>
             <p><strong>Due:</strong> _________________</p>
             <p><strong>Points:</strong> 100 points total</p>
         </div>
     </div>
+
+    <script>
+        function downloadPDF() {
+            // Add print styling temporarily
+            const printStyle = document.createElement('style');
+            printStyle.innerHTML = `
+                @media print {
+                    body { background: white; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+                    .container { max-width: 100%; }
+                    .section { page-break-inside: avoid; box-shadow: none; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+                    .token-sample { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+                    table { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+                    td, th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+                    div[style*="background"] { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+                    button { display: none; }
+                    @page { margin: 15mm; size: A4; }
+                }
+            `;
+            document.head.appendChild(printStyle);
+            
+            // Trigger print dialog
+            setTimeout(() => {
+                window.print();
+                // Remove print style after printing
+                setTimeout(() => document.head.removeChild(printStyle), 500);
+            }, 100);
+        }
+    </script>
 </body>
 </html>
